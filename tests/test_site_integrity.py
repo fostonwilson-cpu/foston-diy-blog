@@ -60,8 +60,8 @@ DISALLOWED_SCRIPT_TOKENS = ("innerHTML", "outerHTML", "insertAdjacentHTML")
 
 FILES_DISALLOWING_EXTERNAL_URLS = HTML_FILES + [CSS_FILE]
 ALLOWED_EXTERNAL_URLS = {
-    "https://instagram.com/fostondiy",
-    "https://youtube.com/@fostonmakes",
+    "https://linkedin.com/in/fostonit",
+    "https://youtube.com/@fostonit",
 }
 
 
