@@ -52,8 +52,8 @@ header {
 }
 
 .hero {
-  background: linear-gradient(135deg, rgba(44, 62, 80, 0.9), rgba(41, 128, 185, 0.85)),
-    url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80') center/cover;
+  background: radial-gradient(circle at top left, rgba(44, 62, 80, 0.92), rgba(41, 128, 185, 0.88)),
+    linear-gradient(160deg, rgba(22, 32, 45, 0.8), rgba(41, 128, 185, 0.65));
   padding: 4rem 2rem 4.5rem;
   display: grid;
   gap: 2rem;
@@ -656,13 +656,13 @@ footer {
 }
 
 .hero.about-hero {
-  background: linear-gradient(135deg, rgba(44, 62, 80, 0.92), rgba(22, 160, 133, 0.85)),
-    url('https://images.unsplash.com/photo-1505843863401-277c4a360dba?auto=format&fit=crop&w=1600&q=80') center/cover;
+  background: radial-gradient(circle at top right, rgba(22, 160, 133, 0.9), rgba(44, 62, 80, 0.9)),
+    linear-gradient(145deg, rgba(15, 100, 90, 0.7), rgba(10, 36, 54, 0.85));
 }
 
 .hero.tips-hero {
-  background: linear-gradient(135deg, rgba(41, 128, 185, 0.9), rgba(39, 174, 96, 0.8)),
-    url('https://images.unsplash.com/photo-1503389152951-9f343605f61e?auto=format&fit=crop&w=1600&q=80') center/cover;
+  background: radial-gradient(circle at top left, rgba(39, 174, 96, 0.92), rgba(41, 128, 185, 0.88)),
+    linear-gradient(155deg, rgba(16, 75, 56, 0.75), rgba(12, 40, 68, 0.85));
 }
 
 /* Dark Mode Styles */

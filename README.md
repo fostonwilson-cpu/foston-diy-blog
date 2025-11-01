@@ -28,9 +28,9 @@ deployment manually from the GitHub Actions tab via the **Deploy static site** w
 
 ## Security hardening
 
-- Every page sends a strict Content Security Policy that blocks third-party scripts, limits images to
-  the curated Unsplash backgrounds, and disables embedding within other sites.
-- Additional headers (Referrer-Policy, X-Content-Type-Options, Permissions-Policy) reduce passive metadata
-  leaks and ensure browsers treat the assets with the correct MIME types.
-- Automated tests enforce the headers, verify that no inline event handlers or HTML injection APIs creep in,
-  and confirm spacing rules stay non-negative.
+- Every page sends a hardened Content Security Policy that blocks third-party scripts, confines images and
+  media to first-party assets, prevents worker/frame injection, and upgrades any attempted insecure requests.
+- Additional headers (Referrer-Policy, X-Content-Type-Options, Permissions-Policy, and cross-origin isolation
+  directives) reduce passive metadata leaks, enforce MIME correctness, and isolate the browsing context.
+- Automated tests enforce the headers, ensure no inline event handlers or risky DOM injection APIs creep in,
+  and now fail the build if any external URLs sneak into the HTML or CSS or if spacing rules turn negative.

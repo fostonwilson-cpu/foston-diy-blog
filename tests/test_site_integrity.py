@@ -1,4 +1,5 @@
 import os
+import re
 import unittest
 from html.parser import HTMLParser
 
@@ -15,15 +16,21 @@ CSS_FILE = os.path.join(REPO_ROOT, "style.css")
 
 CONTENT_SECURITY_POLICY = (
     "default-src 'self'; "
-    "img-src 'self' https://images.unsplash.com data:; "
+    "img-src 'self' data:; "
     "style-src 'self'; "
     "script-src 'self'; "
     "connect-src 'none'; "
     "font-src 'self'; "
+    "media-src 'self'; "
     "object-src 'none'; "
     "base-uri 'self'; "
     "form-action 'self'; "
-    "frame-ancestors 'none'"
+    "frame-src 'none'; "
+    "child-src 'none'; "
+    "frame-ancestors 'none'; "
+    "worker-src 'none'; "
+    "upgrade-insecure-requests; "
+    "require-trusted-types-for 'script'"
 )
 
 EXPECTED_SECURITY_SNIPPETS = [
@@ -31,6 +38,9 @@ EXPECTED_SECURITY_SNIPPETS = [
     'http-equiv="Referrer-Policy" content="no-referrer"',
     'http-equiv="X-Content-Type-Options" content="nosniff"',
     'http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()"',
+    'http-equiv="Cross-Origin-Opener-Policy" content="same-origin"',
+    'http-equiv="Cross-Origin-Resource-Policy" content="same-origin"',
+    'http-equiv="Cross-Origin-Embedder-Policy" content="require-corp"',
 ]
 
 INLINE_EVENT_ATTRIBUTES = (
@@ -47,6 +57,12 @@ INLINE_EVENT_ATTRIBUTES = (
 )
 
 DISALLOWED_SCRIPT_TOKENS = ("innerHTML", "outerHTML", "insertAdjacentHTML")
+
+FILES_DISALLOWING_EXTERNAL_URLS = HTML_FILES + [CSS_FILE]
+ALLOWED_EXTERNAL_URLS = {
+    "https://instagram.com/fostondiy",
+    "https://youtube.com/@fostonmakes",
+}
 
 
 class SimpleHTMLValidator(HTMLParser):
@@ -104,6 +120,18 @@ class TestSiteIntegrity(unittest.TestCase):
                     contents = f.read()
                 for token in DISALLOWED_SCRIPT_TOKENS:
                     self.assertNotIn(token, contents, f"Disallowed DOM API '{token}' detected in {script_path}")
+
+    def test_no_external_urls_in_markup_or_styles(self):
+        for file_path in FILES_DISALLOWING_EXTERNAL_URLS:
+            with self.subTest(file_path=file_path):
+                with open(file_path, encoding="utf-8") as f:
+                    contents = f.read()
+                matches = set(re.findall(r"https://[^'\"\s>]+", contents))
+                unexpected = matches - ALLOWED_EXTERNAL_URLS
+                self.assertFalse(
+                    unexpected,
+                    f"External HTTPS references are disallowed: {sorted(unexpected)}",
+                )
 
 
 if __name__ == "__main__":
