@@ -2,11 +2,11 @@
 
 A refreshed static site for Foston's do-it-yourself home repair hub. The redesign introduces:
 
-- A hero header with clear navigation and dark-mode toggle persistence
-- Rich featured project details, planning resources, and a newsletter call-to-action
-- A fully styled tips archive with deep-linked categories and quick-share legends
+- A hero header with clear navigation, skip links, and dark-mode toggle persistence
+- Rich featured project details, planning resources, kickoff essentials, and a newsletter call-to-action
+- A fully styled tips archive with deep-linked categories, quick-share legends, and live filtering by tag or keyword
 - A new about page highlighting Foston's story, favorite tools, and collaboration options
-- Additional planner, resource shelf, and community spotlight sections on the homepage
+- Additional planner, resource shelf, events calendar, and community spotlight sections on the homepage
 
 ## Local preview
 

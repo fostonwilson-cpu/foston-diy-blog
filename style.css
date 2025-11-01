@@ -19,6 +19,25 @@ body {
   line-height: 1.6;
 }
 
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 50%;
+  transform: translate(-50%, -200%);
+  background: #fff;
+  color: #0d1117;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+  font-weight: 600;
+  transition: var(--transition);
+  z-index: 999;
+}
+
+.skip-link:focus {
+  transform: translate(-50%, 0);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -273,6 +292,41 @@ main {
   color: var(--muted);
 }
 
+.essentials {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 2rem;
+}
+
+.essentials__grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.essentials__card {
+  background: rgba(41, 128, 185, 0.08);
+  border-radius: calc(var(--radius) - 4px);
+  padding: 1.75rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.essentials__card h3 {
+  margin: 0;
+}
+
+.essentials__card ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.5rem;
+}
+
 .resource-shelf {
   background: linear-gradient(135deg, rgba(41, 128, 185, 0.08), rgba(22, 160, 133, 0.08));
   border-radius: var(--radius);
@@ -295,6 +349,41 @@ main {
   display: grid;
   gap: 0.75rem;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.events {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 2rem;
+}
+
+.events__timeline {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.events__item {
+  padding: 1.5rem;
+  border-radius: calc(var(--radius) - 6px);
+  background: rgba(22, 160, 133, 0.08);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.events__item h3 {
+  margin: 0;
+}
+
+.events__item p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.events__cta {
+  justify-self: start;
 }
 
 .resource h3 {
@@ -438,6 +527,67 @@ footer {
   font-weight: 600;
 }
 
+.tips-filter {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.tips-filter__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.tips-filter__label {
+  font-weight: 600;
+}
+
+.tips-filter__form input[type="search"] {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(44, 62, 80, 0.15);
+  font-size: 1rem;
+}
+
+.tips-filter__form input[type="search"]:focus {
+  outline: 3px solid rgba(41, 128, 185, 0.2);
+  border-color: rgba(41, 128, 185, 0.6);
+}
+
+.tips-filter__group {
+  margin: 0;
+  padding: 1rem;
+  border-radius: calc(var(--radius) - 6px);
+  border: 1px solid rgba(44, 62, 80, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.tips-filter__group legend {
+  font-weight: 600;
+  padding: 0 0.5rem;
+}
+
+.tips-filter__status {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.tips-empty {
+  text-align: center;
+  font-weight: 600;
+  color: var(--muted);
+  background: rgba(41, 128, 185, 0.1);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
 .tips-card {
   background: var(--surface);
   border-radius: var(--radius);
@@ -551,20 +701,49 @@ body.dark-mode .button--ghost:focus-visible {
 body.dark-mode .featured,
 body.dark-mode .card,
 body.dark-mode .planner,
+body.dark-mode .essentials,
 body.dark-mode .resource-shelf,
 body.dark-mode .resource,
+body.dark-mode .events,
 body.dark-mode .community,
 body.dark-mode .latest,
 body.dark-mode .cta,
 body.dark-mode .tips-intro,
+body.dark-mode .tips-filter,
 body.dark-mode .tips-card,
-body.dark-mode .about {
+body.dark-mode .about,
+body.dark-mode .tips-empty {
   background: rgba(18, 28, 40, 0.95);
 }
 
 body.dark-mode .resource {
   background: rgba(18, 28, 40, 0.8);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .essentials__card {
+  background: rgba(41, 128, 185, 0.14);
+}
+
+body.dark-mode .events__item {
+  background: rgba(22, 160, 133, 0.18);
+}
+
+body.dark-mode .tips-filter__group {
+  border-color: rgba(230, 237, 246, 0.12);
+}
+
+body.dark-mode .tips-filter__status {
+  color: rgba(230, 237, 246, 0.7);
+}
+
+body.dark-mode .tips-empty {
+  color: rgba(230, 237, 246, 0.8);
+}
+
+body.dark-mode .skip-link {
+  background: #1b2431;
+  color: #e6edf6;
 }
 
 body.dark-mode .resource-shelf {

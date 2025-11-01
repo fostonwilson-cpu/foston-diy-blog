@@ -5,8 +5,10 @@
   <title>DIY Tips Archive</title>
   <link rel="stylesheet" href="style.css">
   <script src="theme-toggle.js" defer></script>
+  <script src="tips-filter.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="hero tips-hero">
     <div class="hero__content">
       <h1>DIY Tips Archive</h1>
@@ -17,10 +19,10 @@
       <a href="about.html">About</a>
       <a href="tips.html" aria-current="page">Tips Archive</a>
       <button id="toggle-theme" class="button button--icon" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
-    </nav>
+  </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="tips-intro">
       <p>
         Each collection below bundles printable checklists, wiring diagrams, and quick-reference cheat
@@ -33,11 +35,25 @@
       </div>
     </section>
 
+    <section class="tips-filter" aria-label="Filter tips">
+      <form id="tips-filter" class="tips-filter__form" role="search">
+        <label class="tips-filter__label" for="tips-query">Search tips</label>
+        <input id="tips-query" name="q" type="search" placeholder="Search by tool, project, or keyword" autocomplete="off">
+        <fieldset class="tips-filter__group">
+          <legend>Highlight tags</legend>
+          <label><input type="checkbox" name="tag" value="weekend"> Weekend project</label>
+          <label><input type="checkbox" name="tag" value="safety"> Safety first</label>
+          <label><input type="checkbox" name="tag" value="showstopper"> Showstopper build</label>
+        </fieldset>
+      </form>
+      <p class="tips-filter__status" role="status" aria-live="polite">Showing all collections.</p>
+    </section>
+
     <section class="tips-grid">
       <article id="plumbing" class="tips-card">
         <h2>Plumbing Fixes</h2>
         <p>Keep your water running smoothly with confidence-boosting maintenance.</p>
-        <ul>
+        <ul data-tags="weekend safety">
           <li>Diagnose toilet valve issues with a printable dye-test checklist 🧰</li>
           <li>Swap a shower cartridge and balance the temperature limit stop ⚡</li>
           <li>Label every shutoff with the waterproof tag template PDF</li>
@@ -48,7 +64,7 @@
       <article id="lighting" class="tips-card">
         <h2>Lighting Mods</h2>
         <p>Illuminate your home with smarter, safer lighting projects.</p>
-        <ul>
+        <ul data-tags="showstopper safety">
           <li>Ambient LED strip setups for cabinets and bookshelves</li>
           <li>Holiday light show programming best practices 🎉</li>
           <li>Smart switch wiring diagrams and safety callouts ⚡</li>
@@ -59,7 +75,7 @@
       <article id="seasonal" class="tips-card">
         <h2>Seasonal Crafts</h2>
         <p>Bring the wow-factor to every season with printable patterns and build guides.</p>
-        <ul>
+        <ul data-tags="showstopper weekend">
           <li>Printable Halloween stencils and yard sign bundle 🎉</li>
           <li>Foam tombstone aging techniques with shop-safe finishes</li>
           <li>Winter lanterns with remote-controlled LEDs</li>
@@ -70,7 +86,7 @@
       <article id="electrical" class="tips-card">
         <h2>Electrical Safety</h2>
         <p>Work clean, safe, and code-compliant when you’re dealing with power.</p>
-        <ul>
+        <ul data-tags="safety">
           <li>Service panel labeling worksheets with arc-fault callouts ⚡</li>
           <li>GFCI and AFCI troubleshooting flowcharts</li>
           <li>120V extension cord load calculator and printable hang tag ⚡</li>
@@ -81,7 +97,7 @@
       <article id="workshop" class="tips-card">
         <h2>Workshop Skills</h2>
         <p>Tune your shop for accuracy and speed so every project starts dialed in.</p>
-        <ul>
+        <ul data-tags="weekend safety">
           <li>Table saw alignment guide with feeler-gauge checkpoints</li>
           <li>Dust collection upgrade path for single-car garages ⚡</li>
           <li>3D-printable clamp rack and French cleat accessories 🧰</li>
@@ -92,14 +108,38 @@
       <article id="outdoor" class="tips-card">
         <h2>Outdoor Upgrades</h2>
         <p>Keep the exterior looking sharp and weather-resistant year-round.</p>
-        <ul>
+        <ul data-tags="weekend showstopper">
           <li>Deck board replacement checklist with spacing gauges 🧰</li>
           <li>Smart irrigation controller programming for drought weeks</li>
           <li>DIY low-voltage path lights with printable stake templates 🎉</li>
           <li>Build a cedar storage bench with hidden pest-proof bins</li>
         </ul>
       </article>
+
+      <article id="energy" class="tips-card">
+        <h2>Energy Savers</h2>
+        <p>Dial back utility bills with DIY audits and efficient retrofits.</p>
+        <ul data-tags="weekend safety">
+          <li>Seal duct leaks with mastic and insulation sleeves 🧰</li>
+          <li>Program smart thermostats with seasonal setback schedules</li>
+          <li>Install attic air dams to corral blown-in insulation</li>
+          <li>Upgrade to LED shop lighting with wattage calculators ⚡</li>
+        </ul>
+      </article>
+
+      <article id="finishing" class="tips-card">
+        <h2>Finishing Touches</h2>
+        <p>Make every project look pro-grade with dialed-in surface treatments.</p>
+        <ul data-tags="showstopper weekend">
+          <li>Wipe-on poly schedule with grit-by-grit sanding roadmap</li>
+          <li>Color mixing formulas for faux patina finishes 🎉</li>
+          <li>HVLP sprayer setup with troubleshooting flowchart</li>
+          <li>Caulk like a pro with bead-smoothing cheat codes</li>
+        </ul>
+      </article>
     </section>
+
+    <p class="tips-empty" hidden>No tips match your filters yet. Try clearing a tag or search term.</p>
   </main>
 
   <footer>

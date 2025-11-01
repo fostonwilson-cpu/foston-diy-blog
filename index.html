@@ -7,6 +7,7 @@
   <script src="theme-toggle.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="hero">
     <div class="hero__content">
       <h1>Welcome to Foston's DIY Hub</h1>
@@ -21,10 +22,10 @@
       <a href="about.html">About</a>
       <a href="tips.html">Tips Archive</a>
       <button id="toggle-theme" class="button button--icon" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
-    </nav>
+  </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <section id="featured" class="featured">
       <div class="section-heading">
         <h2>Featured Project</h2>
@@ -96,6 +97,39 @@
       </ol>
     </section>
 
+    <section class="essentials">
+      <div class="section-heading">
+        <h2>Project Kickoff Essentials</h2>
+        <p class="section-heading__subtext">Lock in the basics before you plug in a tool.</p>
+      </div>
+      <div class="essentials__grid">
+        <article class="essentials__card">
+          <h3>Safety Snapshot</h3>
+          <ul>
+            <li>Confirm PPE fits and batteries are charged.</li>
+            <li>Review the hazard checklist for electricity, dust, and noise.</li>
+            <li>Stage a charged fire extinguisher within reach.</li>
+          </ul>
+        </article>
+        <article class="essentials__card">
+          <h3>Material Readiness</h3>
+          <ul>
+            <li>Lay out cut sheets with scrap allowances.</li>
+            <li>Label bins by step so nothing goes missing mid-build.</li>
+            <li>Dry-fit critical joints before glue or fasteners.</li>
+          </ul>
+        </article>
+        <article class="essentials__card">
+          <h3>Tool Tune-Up</h3>
+          <ul>
+            <li>Check calibration on saw fences and torque settings.</li>
+            <li>Swap in sharp blades or bits to save rework time.</li>
+            <li>Set up dust collection and test airflow.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <section class="resource-shelf">
       <div class="section-heading">
         <h2>Resource Shelf</h2>
@@ -139,6 +173,28 @@
           <p>Free STL files sized for common lamp cords to keep your holiday displays tidy.</p>
         </li>
       </ul>
+    </section>
+
+    <section class="events">
+      <div class="section-heading">
+        <h2>Workshops &amp; Livestreams</h2>
+        <p class="section-heading__subtext">Tune in live or join on-site to learn alongside the crew.</p>
+      </div>
+      <div class="events__timeline">
+        <article class="events__item">
+          <h3>April 6 · Livestream</h3>
+          <p>Retrofit your garage with smart zoning and load balancing. Includes live Q&amp;A with licensed electricians.</p>
+        </article>
+        <article class="events__item">
+          <h3>April 20 · Workshop</h3>
+          <p>Hands-on soldering clinic at Northside Makerspace. Build a motion-activated prop controller to take home.</p>
+        </article>
+        <article class="events__item">
+          <h3>May 4 · Office Hours</h3>
+          <p>Members-only project review. Submit your build plans for feedback, sourcing tips, and safety checks.</p>
+        </article>
+      </div>
+      <a class="button events__cta" href="mailto:hello@fostondiy.com?subject=Workshop%20RSVP">RSVP or request a replay</a>
     </section>
 
     <section class="community">
