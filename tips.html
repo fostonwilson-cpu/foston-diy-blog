@@ -6,38 +6,121 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>DIY Tips Archive</h1>
-    <nav>
-      <a href="index.html">Home</a> |
+  <header class="hero tips-hero">
+    <div class="hero__content">
+      <h1>DIY Tips Archive</h1>
+      <p class="hero__tagline">Bookmarkable fixes, clever upgrades, and seasonal showstoppers.</p>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
+      <a href="tips.html" aria-current="page">Tips Archive</a>
+      <button id="toggle-theme" class="button button--icon" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
     </nav>
   </header>
+
   <main>
-    <section>
-      <h2>Plumbing Fixes</h2>
-      <ul>
-        <li>Diagnosing toilet valve issues</li>
-        <li>Replacing sink aerators</li>
-      </ul>
+    <section class="tips-intro">
+      <p>
+        Each collection below bundles printable checklists, wiring diagrams, and quick-reference cheat
+        sheets. Tap a section to copy the anchor link and share it with a neighbor who needs the same fix.
+      </p>
+      <div class="tips-key">
+        <span class="tips-key__pill">🧰 Weekend Project</span>
+        <span class="tips-key__pill">⚡ Safety First</span>
+        <span class="tips-key__pill">🎉 Showstopper Build</span>
+      </div>
     </section>
-    <section>
-      <h2>Lighting Mods</h2>
-      <ul>
-        <li>Ambient LED setups</li>
-        <li>Holiday light show programming</li>
-      </ul>
-    </section>
-    <section>
-      <h2>Seasonal Crafts</h2>
-      <ul>
-        <li>Printable Halloween stencils</li>
-        <li>Graveyard yard displays</li>
-      </ul>
+
+    <section class="tips-grid">
+      <article id="plumbing" class="tips-card">
+        <h2>Plumbing Fixes</h2>
+        <p>Keep your water running smoothly with confidence-boosting maintenance.</p>
+        <ul>
+          <li>Diagnose toilet valve issues with a printable dye-test checklist 🧰</li>
+          <li>Swap a shower cartridge and balance the temperature limit stop ⚡</li>
+          <li>Label every shutoff with the waterproof tag template PDF</li>
+          <li>Build a DIY condensate pump alarm with smart-text alerts ⚡</li>
+        </ul>
+      </article>
+
+      <article id="lighting" class="tips-card">
+        <h2>Lighting Mods</h2>
+        <p>Illuminate your home with smarter, safer lighting projects.</p>
+        <ul>
+          <li>Ambient LED strip setups for cabinets and bookshelves</li>
+          <li>Holiday light show programming best practices 🎉</li>
+          <li>Smart switch wiring diagrams and safety callouts ⚡</li>
+          <li>Low-voltage landscape lighting plan with voltage-drop calculator</li>
+        </ul>
+      </article>
+
+      <article id="seasonal" class="tips-card">
+        <h2>Seasonal Crafts</h2>
+        <p>Bring the wow-factor to every season with printable patterns and build guides.</p>
+        <ul>
+          <li>Printable Halloween stencils and yard sign bundle 🎉</li>
+          <li>Foam tombstone aging techniques with shop-safe finishes</li>
+          <li>Winter lanterns with remote-controlled LEDs</li>
+          <li>Modular spring planter boxes with hidden drip irrigation</li>
+        </ul>
+      </article>
+
+      <article id="electrical" class="tips-card">
+        <h2>Electrical Safety</h2>
+        <p>Work clean, safe, and code-compliant when you’re dealing with power.</p>
+        <ul>
+          <li>Service panel labeling worksheets with arc-fault callouts ⚡</li>
+          <li>GFCI and AFCI troubleshooting flowcharts</li>
+          <li>120V extension cord load calculator and printable hang tag ⚡</li>
+          <li>How to add whole-home surge protection without surprises</li>
+        </ul>
+      </article>
+
+      <article id="workshop" class="tips-card">
+        <h2>Workshop Skills</h2>
+        <p>Tune your shop for accuracy and speed so every project starts dialed in.</p>
+        <ul>
+          <li>Table saw alignment guide with feeler-gauge checkpoints</li>
+          <li>Dust collection upgrade path for single-car garages ⚡</li>
+          <li>3D-printable clamp rack and French cleat accessories 🧰</li>
+          <li>Sharpening station setup for chisels, planes, and turning tools</li>
+        </ul>
+      </article>
+
+      <article id="outdoor" class="tips-card">
+        <h2>Outdoor Upgrades</h2>
+        <p>Keep the exterior looking sharp and weather-resistant year-round.</p>
+        <ul>
+          <li>Deck board replacement checklist with spacing gauges 🧰</li>
+          <li>Smart irrigation controller programming for drought weeks</li>
+          <li>DIY low-voltage path lights with printable stake templates 🎉</li>
+          <li>Build a cedar storage bench with hidden pest-proof bins</li>
+        </ul>
+      </article>
     </section>
   </main>
+
   <footer>
-    <p>© 2025 Foston's DIY Blog</p>
+    <p>© 2025 Foston's DIY Blog · Built with heart and a full tool belt.</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('toggle-theme');
+    const currentTheme = localStorage.getItem('foston-theme');
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.textContent = '☀️';
+      toggle.setAttribute('aria-pressed', 'true');
+    }
+
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      localStorage.setItem('foston-theme', isDark ? 'dark' : 'light');
+    });
+  </script>
 </body>
 </html>

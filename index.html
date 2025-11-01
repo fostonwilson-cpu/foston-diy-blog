@@ -6,28 +6,199 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to Foston's DIY Hub</h1>
-    <p>Reliable fixes, creative mods, and hands-on guides for your home.</p>
-    <nav>
-      <a href="about.html">About</a> |
+  <header class="hero">
+    <div class="hero__content">
+      <h1>Welcome to Foston's DIY Hub</h1>
+      <p class="hero__tagline">Reliable fixes, creative mods, and hands-on guides for your home.</p>
+      <div class="hero__actions">
+        <a class="button" href="#featured">Explore the latest build</a>
+        <a class="button button--ghost" href="tips.html">Browse all tips</a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
       <a href="tips.html">Tips Archive</a>
-      <button id="toggle-theme">Toggle Dark Mode</button>
+      <button id="toggle-theme" class="button button--icon" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
     </nav>
   </header>
+
   <main>
-    <section class="featured">
-      <h2>Featured Project</h2>
-      <p>Check out my Halloween Tesla light show and yard display!</p>
+    <section id="featured" class="featured">
+      <div class="section-heading">
+        <h2>Featured Project</h2>
+        <p class="section-heading__subtext">Step-by-step build logs with downloadable plans.</p>
+      </div>
+      <article class="featured__content">
+        <div class="featured__text">
+          <h3>Halloween Tesla Light Show &amp; Yard Display</h3>
+          <p>
+            Sync mesmerizing Tesla coil arcs with a fully orchestrated light show. Follow along as I
+            walk through the electrical layout, animation programming, and printable props that
+            transformed our front yard into a haunted destination.
+          </p>
+          <ul class="checklist">
+            <li>Wiring diagrams and safety checklist</li>
+            <li>Custom DMX sequencing templates</li>
+            <li>Printable signage for the full spooky effect</li>
+          </ul>
+          <a class="button" href="#newsletter">Get the project files</a>
+        </div>
+        <div class="featured__media" role="img" aria-label="Halloween yard display with lights"></div>
+      </article>
+    </section>
+
+    <section class="card-grid">
+      <article class="card">
+        <h3>Weekend Fixes</h3>
+        <p>Quick wins to knock out in an afternoon—leaky faucets, stuck doors, noisy vents, and more.</p>
+        <a href="tips.html#plumbing" class="button button--ghost">Start fixing</a>
+      </article>
+      <article class="card">
+        <h3>Smart Home Mods</h3>
+        <p>Integrate sensors, automate lighting scenes, and keep your home secure on a budget.</p>
+        <a href="tips.html#lighting" class="button button--ghost">See automations</a>
+      </article>
+      <article class="card">
+        <h3>Seasonal Builds</h3>
+        <p>Bring big energy to the holidays with themed props, synchronized shows, and kid-friendly crafts.</p>
+        <a href="tips.html#seasonal" class="button button--ghost">Plan your display</a>
+      </article>
+    </section>
+
+    <section class="planner">
+      <div class="section-heading">
+        <h2>Blueprint Your Next Project</h2>
+        <p class="section-heading__subtext">A proven five-step workflow to keep builds on schedule.</p>
+      </div>
+      <ol class="planner__steps">
+        <li>
+          <h3>Scope &amp; Sketch</h3>
+          <p>Download my project brief template and capture dimensions, materials, and inspiration shots.</p>
+        </li>
+        <li>
+          <h3>Budget &amp; Source</h3>
+          <p>Use the shared spreadsheet to compare local suppliers against online bundles.</p>
+        </li>
+        <li>
+          <h3>Mock &amp; Test</h3>
+          <p>Prototype with scrap stock or 3D prints. Validate electrical loads with the calculator.</p>
+        </li>
+        <li>
+          <h3>Build Weekend</h3>
+          <p>Follow the printable checklist, and pair every critical step with a safety cross-check.</p>
+        </li>
+        <li>
+          <h3>Show &amp; Share</h3>
+          <p>Snap progress photos, tag <strong>#FostonDIY</strong>, and drop notes for the community recap.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="resource-shelf">
+      <div class="section-heading">
+        <h2>Resource Shelf</h2>
+        <p class="section-heading__subtext">Free downloads to power through planning, wiring, and finishing.</p>
+      </div>
+      <div class="resource-shelf__grid">
+        <article class="resource">
+          <h3>Project Budget Tracker</h3>
+          <p>Includes auto-calculated tax and contingency lines plus vendor contact tabs.</p>
+          <a class="button button--ghost" href="#">Download spreadsheet</a>
+        </article>
+        <article class="resource">
+          <h3>Cut List Generator</h3>
+          <p>Enter dimensions once and export printable diagrams for your table saw or CNC.</p>
+          <a class="button button--ghost" href="#">Get the template</a>
+        </article>
+        <article class="resource">
+          <h3>Workshop Safety Posters</h3>
+          <p>Color-coded signage covering PPE, voltage boundaries, and emergency shutoffs.</p>
+          <a class="button button--ghost" href="#">Print-ready PDF</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="latest">
+      <div class="section-heading">
+        <h2>Fresh on the Bench</h2>
+        <p class="section-heading__subtext">Notes from this week's projects.</p>
+      </div>
+      <ul class="latest__list">
+        <li>
+          <h3>Garage workbench overhaul</h3>
+          <p>Modular pegboard panels, hidden LED task lighting, and a Bluetooth speaker nook.</p>
+        </li>
+        <li>
+          <h3>Water heater health check</h3>
+          <p>Flush steps, anode rod inspection, and a printable maintenance log you can reuse.</p>
+        </li>
+        <li>
+          <h3>3D-printed cable clips</h3>
+          <p>Free STL files sized for common lamp cords to keep your holiday displays tidy.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="community">
+      <div class="community__feature">
+        <h2>Community Spotlight</h2>
+        <p>
+          Every month I highlight two reader builds that remix the tutorials or take them even further.
+          Submit your photos and lessons learned for a chance to be featured here and in the newsletter.
+        </p>
+        <a class="button" href="mailto:hello@fostondiy.com?subject=Community%20Spotlight">Submit your build</a>
+      </div>
+      <div class="community__stories">
+        <figure>
+          <blockquote>
+            “We used Foston’s Halloween DMX guide to automate our school play—zero hiccups and the kids felt
+            like stage pros.”
+          </blockquote>
+          <figcaption>— Lena, Drama Club Volunteer</figcaption>
+        </figure>
+        <figure>
+          <blockquote>
+            “The workshop layout checklist saved us a full day of trial and error when we rearranged our
+            makerspace.”
+          </blockquote>
+          <figcaption>— Pri, Community Makerspace Coordinator</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="newsletter" class="cta">
+      <div class="cta__text">
+        <h2>Join the Workbench Newsletter</h2>
+        <p>Monthly project breakdowns, tool reviews, and printable plans delivered straight to your inbox.</p>
+      </div>
+      <form class="cta__form">
+        <label for="email" class="sr-only">Email address</label>
+        <input id="email" type="email" name="email" placeholder="you@example.com" required>
+        <button type="submit" class="button">Subscribe</button>
+      </form>
     </section>
   </main>
+
   <footer>
-    <p>© 2025 Foston's DIY Blog</p>
+    <p>© 2025 Foston's DIY Blog · Built with heart and a full tool belt.</p>
   </footer>
+
   <script>
     const toggle = document.getElementById('toggle-theme');
+    const currentTheme = localStorage.getItem('foston-theme');
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.textContent = '☀️';
+      toggle.setAttribute('aria-pressed', 'true');
+    }
+
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      localStorage.setItem('foston-theme', isDark ? 'dark' : 'light');
     });
   </script>
 </body>

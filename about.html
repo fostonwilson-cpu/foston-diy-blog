@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Foston</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero about-hero">
+    <div class="hero__content">
+      <h1>Meet Foston</h1>
+      <p class="hero__tagline">Engineer, maker, and the neighbor who shows up with the right tool.</p>
+    </div>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="tips.html">Tips Archive</a>
+      <button id="toggle-theme" class="button button--icon" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about">
+      <article class="about__story">
+        <h2>Why I Share Every Build</h2>
+        <p>
+          Hey, I’m Foston—systems engineer by day, DIY evangelist by night. From rewiring hundred-year-old
+          homes to engineering synchronized light shows, I love demystifying the projects that most folks
+          think require a pro. If it sparks, spins, or needs a clever jig to finish, it’s probably on my bench.
+        </p>
+        <p>
+          This blog is where I document what works, what fails, and the checklists I wish I had before
+          starting. Expect deep dives, printable plans, and the occasional dad joke about torque specs.
+        </p>
+      </article>
+
+      <aside class="about__sidebar">
+        <h3>Favorite Gear</h3>
+        <ul class="about__list">
+          <li><strong>Impact driver:</strong> Milwaukee M12 Fuel with a full bit caddy.</li>
+          <li><strong>Multimeter:</strong> Fluke 117—because safety first.</li>
+          <li><strong>Laser level:</strong> Bosch GLL55 for dialed-in wall art and cabinetry.</li>
+          <li><strong>Maker must-have:</strong> Prusa MK4 for fast prototype brackets and fixtures.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="about about--reverse">
+      <article class="about__story">
+        <h2>Bring Me to Your Project</h2>
+        <p>
+          I partner with local makerspaces, schools, and neighborhood associations to run hands-on clinics.
+          From soldering basics to foam carving for stage props, I love helping people gain confidence with tools.
+        </p>
+        <p>
+          Want to collaborate on a tutorial, sponsor a wild build, or book a workshop? Let’s talk. I reserve a
+          handful of weekends every quarter for community projects.
+        </p>
+      </article>
+      <aside class="about__sidebar">
+        <h3>Get in Touch</h3>
+        <ul class="about__list">
+          <li>Email: <a href="mailto:hello@fostondiy.com">hello@fostondiy.com</a></li>
+          <li>Instagram: <a href="https://instagram.com/fostondiy">@fostondiy</a></li>
+          <li>YouTube: <a href="https://youtube.com/@fostonmakes">@fostonmakes</a></li>
+          <li>Newsletter: Join via the form on the home page</li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Foston's DIY Blog · Built with heart and a full tool belt.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('toggle-theme');
+    const currentTheme = localStorage.getItem('foston-theme');
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggle.textContent = '☀️';
+      toggle.setAttribute('aria-pressed', 'true');
+    }
+
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+      toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      localStorage.setItem('foston-theme', isDark ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
