@@ -1,0 +1,1 @@
+# foston-diy-blog
