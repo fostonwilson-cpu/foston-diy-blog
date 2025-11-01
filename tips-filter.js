@@ -1,4 +1,6 @@
 (function () {
+  'use strict';
+
   const form = document.getElementById('tips-filter');
   const status = document.querySelector('.tips-filter__status');
   const articles = Array.from(document.querySelectorAll('.tips-card'));
@@ -12,18 +14,33 @@
   const tagInputs = Array.from(form.querySelectorAll('input[name="tag"]'));
 
   const normalize = (value) => value.toLowerCase().trim();
+  const allowedTagPattern = /^[a-z0-9-]+$/;
+  const sanitizeTags = (values) =>
+    values
+      .map((value) => normalize(value || ''))
+      .filter((value) => allowedTagPattern.test(value));
+
+  const datasetToTags = (datasetValue) => {
+    if (typeof datasetValue !== 'string') {
+      return [];
+    }
+
+    return sanitizeTags(datasetValue.split(/\s+/).filter(Boolean));
+  };
 
   const update = () => {
-    const query = normalize(input ? input.value : '');
-    const activeTags = tagInputs
-      .filter((checkbox) => checkbox.checked)
-      .map((checkbox) => checkbox.value);
+    const query = normalize(input ? input.value : '').slice(0, 120);
+    const activeTags = sanitizeTags(
+      tagInputs
+        .filter((checkbox) => checkbox.checked)
+        .map((checkbox) => (typeof checkbox.value === 'string' ? checkbox.value : ''))
+    );
 
     let visibleCount = 0;
 
     articles.forEach((article) => {
       const list = article.querySelector('ul[data-tags]');
-      const tags = list ? list.dataset.tags.split(/\s+/).filter(Boolean) : [];
+      const tags = list ? datasetToTags(list.dataset.tags) : [];
       const text = normalize(article.textContent || '');
       const matchesQuery = query === '' || text.includes(query);
       const matchesTags =

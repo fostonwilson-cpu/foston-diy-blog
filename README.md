@@ -7,6 +7,7 @@ A refreshed static site for Foston's do-it-yourself home repair hub. The redesig
 - A fully styled tips archive with deep-linked categories, quick-share legends, and live filtering by tag or keyword
 - A new about page highlighting Foston's story, favorite tools, and collaboration options
 - Additional planner, resource shelf, events calendar, and community spotlight sections on the homepage
+- Strict security headers, sanitized filtering logic, and guardrail tests that keep the static pages resilient
 
 ## Local preview
 
@@ -24,3 +25,12 @@ Pushes to the `main` branch automatically publish the static assets to GitHub Pa
 The workflow bundles the HTML, CSS, and JavaScript into an artifact before deploying,
 so the public site only exposes the necessary files. You can also trigger the
 deployment manually from the GitHub Actions tab via the **Deploy static site** workflow.
+
+## Security hardening
+
+- Every page sends a strict Content Security Policy that blocks third-party scripts, limits images to
+  the curated Unsplash backgrounds, and disables embedding within other sites.
+- Additional headers (Referrer-Policy, X-Content-Type-Options, Permissions-Policy) reduce passive metadata
+  leaks and ensure browsers treat the assets with the correct MIME types.
+- Automated tests enforce the headers, verify that no inline event handlers or HTML injection APIs creep in,
+  and confirm spacing rules stay non-negative.
