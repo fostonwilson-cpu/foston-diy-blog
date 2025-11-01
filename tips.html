@@ -9,7 +9,7 @@
   <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
   <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
   <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
-  <title>DIY Tips Archive</title>
+  <title>IT Help Knowledge Base</title>
   <link rel="stylesheet" href="style.css">
   <script src="theme-toggle.js" defer></script>
   <script src="tips-filter.js" defer></script>
@@ -18,13 +18,13 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="hero tips-hero">
     <div class="hero__content">
-      <h1>DIY Tips Archive</h1>
-      <p class="hero__tagline">Bookmarkable fixes, clever upgrades, and seasonal showstoppers.</p>
+      <h1>IT Help Knowledge Base</h1>
+      <p class="hero__tagline">Bookmarkable runbooks, secure configurations, and automation recipes.</p>
     </div>
     <nav class="main-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
-      <a href="tips.html" aria-current="page">Tips Archive</a>
+      <a href="tips.html" aria-current="page">Knowledge Base</a>
       <button id="toggle-theme" class="button button--icon" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙</button>
   </nav>
   </header>
@@ -32,116 +32,105 @@
   <main id="main-content">
     <section class="tips-intro">
       <p>
-        Each collection below bundles printable checklists, wiring diagrams, and quick-reference cheat
-        sheets. Tap a section to copy the anchor link and share it with a neighbor who needs the same fix.
+        Each collection below bundles SOPs, architecture diagrams, and quick-reference cheat sheets.
+        Grab a link and share it with the teammate facing the same incident.
       </p>
       <div class="tips-key">
-        <span class="tips-key__pill">🧰 Weekend Project</span>
-        <span class="tips-key__pill">⚡ Safety First</span>
-        <span class="tips-key__pill">🎉 Showstopper Build</span>
+        <span class="tips-key__pill">🧩 Quick Fix</span>
+        <span class="tips-key__pill">🔐 Security Critical</span>
+        <span class="tips-key__pill">⚙️ Automation Ready</span>
       </div>
     </section>
 
     <section class="tips-filter" aria-label="Filter tips">
       <form id="tips-filter" class="tips-filter__form" role="search">
         <label class="tips-filter__label" for="tips-query">Search tips</label>
-        <input id="tips-query" name="q" type="search" placeholder="Search by tool, project, or keyword" autocomplete="off">
+        <input id="tips-query" name="q" type="search" placeholder="Search by system, app, or keyword" autocomplete="off">
         <fieldset class="tips-filter__group">
           <legend>Highlight tags</legend>
-          <label><input type="checkbox" name="tag" value="weekend"> Weekend project</label>
-          <label><input type="checkbox" name="tag" value="safety"> Safety first</label>
-          <label><input type="checkbox" name="tag" value="showstopper"> Showstopper build</label>
+          <label><input type="checkbox" name="tag" value="quick"> Quick fix</label>
+          <label><input type="checkbox" name="tag" value="security"> Security critical</label>
+          <label><input type="checkbox" name="tag" value="automation"> Automation ready</label>
         </fieldset>
       </form>
       <p class="tips-filter__status" role="status" aria-live="polite">Showing all collections.</p>
     </section>
 
     <section class="tips-grid">
-      <article id="plumbing" class="tips-card">
-        <h2>Plumbing Fixes</h2>
-        <p>Keep your water running smoothly with confidence-boosting maintenance.</p>
-        <ul data-tags="weekend safety">
-          <li>Diagnose toilet valve issues with a printable dye-test checklist 🧰</li>
-          <li>Swap a shower cartridge and balance the temperature limit stop ⚡</li>
-          <li>Label every shutoff with the waterproof tag template PDF</li>
-          <li>Build a DIY condensate pump alarm with smart-text alerts ⚡</li>
+      <article id="support" class="tips-card">
+        <h2>End-User Support</h2>
+        <p>Keep inboxes calm with scripts for the most frequent requests.</p>
+        <ul data-tags="quick">
+          <li>Wi-Fi drops triage tree with modem, AP, and client checkpoints 🧩</li>
+          <li>Printer queue reset checklist for Windows and macOS</li>
+          <li>Email sync repair guide covering Outlook, Gmail, and mobile apps 🧩</li>
+          <li>Self-service password reset enablement kit</li>
         </ul>
       </article>
 
-      <article id="lighting" class="tips-card">
-        <h2>Lighting Mods</h2>
-        <p>Illuminate your home with smarter, safer lighting projects.</p>
-        <ul data-tags="showstopper safety">
-          <li>Ambient LED strip setups for cabinets and bookshelves</li>
-          <li>Holiday light show programming best practices 🎉</li>
-          <li>Smart switch wiring diagrams and safety callouts ⚡</li>
-          <li>Low-voltage landscape lighting plan with voltage-drop calculator</li>
+      <article id="security" class="tips-card">
+        <h2>Security Operations</h2>
+        <p>Respond quickly to threats with actionable playbooks.</p>
+        <ul data-tags="security automation">
+          <li>Phishing escalation SOP with user education templates 🔐</li>
+          <li>Ransomware containment checklist aligned to NIST guidance</li>
+          <li>Conditional Access baseline policies for contractors 🔐</li>
+          <li>SOAR automation starter pack for alert enrichment ⚙️</li>
         </ul>
       </article>
 
-      <article id="seasonal" class="tips-card">
-        <h2>Seasonal Crafts</h2>
-        <p>Bring the wow-factor to every season with printable patterns and build guides.</p>
-        <ul data-tags="showstopper weekend">
-          <li>Printable Halloween stencils and yard sign bundle 🎉</li>
-          <li>Foam tombstone aging techniques with shop-safe finishes</li>
-          <li>Winter lanterns with remote-controlled LEDs</li>
-          <li>Modular spring planter boxes with hidden drip irrigation</li>
+      <article id="productivity" class="tips-card">
+        <h2>Collaboration &amp; Productivity</h2>
+        <p>Streamline onboarding and keep teams in sync.</p>
+        <ul data-tags="automation quick">
+          <li>New hire onboarding automation with identity, apps, and hardware tasks ⚙️</li>
+          <li>M365 and Google Workspace governance checklist</li>
+          <li>Meeting room tech reset instructions for facilities partners 🧩</li>
+          <li>Shared drive lifecycle policy with retention automation ⚙️</li>
         </ul>
       </article>
 
-      <article id="electrical" class="tips-card">
-        <h2>Electrical Safety</h2>
-        <p>Work clean, safe, and code-compliant when you’re dealing with power.</p>
-        <ul data-tags="safety">
-          <li>Service panel labeling worksheets with arc-fault callouts ⚡</li>
-          <li>GFCI and AFCI troubleshooting flowcharts</li>
-          <li>120V extension cord load calculator and printable hang tag ⚡</li>
-          <li>How to add whole-home surge protection without surprises</li>
+      <article id="infrastructure" class="tips-card">
+        <h2>Infrastructure &amp; Cloud</h2>
+        <p>Keep networks and workloads reliable with proven runbooks.</p>
+        <ul data-tags="security">
+          <li>Firewall change control template with rollback plan 🔐</li>
+          <li>Azure and AWS patch cadence matrix</li>
+          <li>VPN capacity scaling checklist for hybrid workforces</li>
+          <li>Disaster recovery tabletop exercise guide 🔐</li>
         </ul>
       </article>
 
-      <article id="workshop" class="tips-card">
-        <h2>Workshop Skills</h2>
-        <p>Tune your shop for accuracy and speed so every project starts dialed in.</p>
-        <ul data-tags="weekend safety">
-          <li>Table saw alignment guide with feeler-gauge checkpoints</li>
-          <li>Dust collection upgrade path for single-car garages ⚡</li>
-          <li>3D-printable clamp rack and French cleat accessories 🧰</li>
-          <li>Sharpening station setup for chisels, planes, and turning tools</li>
+      <article id="devices" class="tips-card">
+        <h2>Device Management</h2>
+        <p>Automate fleet health across laptops, mobiles, and kiosks.</p>
+        <ul data-tags="automation quick">
+          <li>Intune compliance policy blueprint for mixed OS environments ⚙️</li>
+          <li>macOS update deployment rings with fallback options</li>
+          <li>ChromeOS kiosk lockdown checklist for lobby displays 🧩</li>
+          <li>Hardware refresh planner with warranty tracking ⚙️</li>
         </ul>
       </article>
 
-      <article id="outdoor" class="tips-card">
-        <h2>Outdoor Upgrades</h2>
-        <p>Keep the exterior looking sharp and weather-resistant year-round.</p>
-        <ul data-tags="weekend showstopper">
-          <li>Deck board replacement checklist with spacing gauges 🧰</li>
-          <li>Smart irrigation controller programming for drought weeks</li>
-          <li>DIY low-voltage path lights with printable stake templates 🎉</li>
-          <li>Build a cedar storage bench with hidden pest-proof bins</li>
+      <article id="analytics" class="tips-card">
+        <h2>Monitoring &amp; Analytics</h2>
+        <p>Turn data into proactive IT service improvements.</p>
+        <ul data-tags="automation">
+          <li>Build a unified incident dashboard in Power BI ⚙️</li>
+          <li>Log retention policy matrix covering SIEM and MDM 🔐</li>
+          <li>Alert fatigue reduction worksheet with stakeholder scoring ⚙️</li>
+          <li>Ticket trend analysis template for quarterly reviews</li>
         </ul>
       </article>
 
-      <article id="energy" class="tips-card">
-        <h2>Energy Savers</h2>
-        <p>Dial back utility bills with DIY audits and efficient retrofits.</p>
-        <ul data-tags="weekend safety">
-          <li>Seal duct leaks with mastic and insulation sleeves 🧰</li>
-          <li>Program smart thermostats with seasonal setback schedules</li>
-          <li>Install attic air dams to corral blown-in insulation</li>
-          <li>Upgrade to LED shop lighting with wattage calculators ⚡</li>
-        </ul>
-      </article>
-
-      <article id="finishing" class="tips-card">
-        <h2>Finishing Touches</h2>
-        <p>Make every project look pro-grade with dialed-in surface treatments.</p>
-        <ul data-tags="showstopper weekend">
-          <li>Wipe-on poly schedule with grit-by-grit sanding roadmap</li>
-          <li>Color mixing formulas for faux patina finishes 🎉</li>
-          <li>HVLP sprayer setup with troubleshooting flowchart</li>
-          <li>Caulk like a pro with bead-smoothing cheat codes</li>
+      <article id="governance" class="tips-card">
+        <h2>Governance &amp; Compliance</h2>
+        <p>Stay audit-ready without sacrificing agility.</p>
+        <ul data-tags="security">
+          <li>SOC 2 evidence collection tracker with owner assignments 🔐</li>
+          <li>Access review automation playbook for high-risk apps</li>
+          <li>Vendor risk assessment questionnaire template</li>
+          <li>Business continuity communication matrix 🔐</li>
         </ul>
       </article>
     </section>
@@ -150,7 +139,7 @@
   </main>
 
   <footer>
-    <p>© 2025 Foston's DIY Blog · Built with heart and a full tool belt.</p>
+    <p>© 2025 Foston IT Help Desk · Powered by curiosity and secure defaults.</p>
   </footer>
 
 </body>

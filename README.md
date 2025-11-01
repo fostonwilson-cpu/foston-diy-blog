@@ -1,12 +1,12 @@
-# Foston DIY Blog
+# Foston IT Help Desk
 
-A refreshed static site for Foston's do-it-yourself home repair hub. The redesign introduces:
+A refreshed static site for Foston's IT support hub. The redesign introduces:
 
 - A hero header with clear navigation, skip links, and dark-mode toggle persistence
-- Rich featured project details, planning resources, kickoff essentials, and a newsletter call-to-action
-- A fully styled tips archive with deep-linked categories, quick-share legends, and live filtering by tag or keyword
-- A new about page highlighting Foston's story, favorite tools, and collaboration options
-- Additional planner, resource shelf, events calendar, and community spotlight sections on the homepage
+- A featured secure-remote-work rollout guide, incident planning framework, and resource library downloads
+- A knowledge base with deep-linked categories covering support, security, automation, and compliance
+- An updated about page highlighting Foston's preferred tech stack and collaboration options
+- Training events, community success stories, and a status brief subscription to keep stakeholders informed
 - Strict security headers, sanitized filtering logic, and guardrail tests that keep the static pages resilient
 
 ## Local preview
