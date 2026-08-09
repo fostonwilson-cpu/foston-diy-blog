@@ -26,6 +26,16 @@ The workflow bundles the HTML, CSS, and JavaScript into an artifact before deplo
 so the public site only exposes the necessary files. You can also trigger the
 deployment manually from the GitHub Actions tab via the **Deploy static site** workflow.
 
+## Content agent workflow
+
+New knowledge-base entries follow a repeatable process instead of being drafted freehand:
+
+- `knowledge-base/` holds a small set of process notes (voice, audience, site architecture, headline patterns, and
+  hard guardrails) plus a master checklist, `Creating-a-New-Article.md`, that ties them together.
+- The `write-tip` Claude Code skill (`.claude/skills/write-tip/`) runs that checklist end to end — read the notes,
+  draft the entry, insert it into `tips.html`, and verify it against the test suite — from a single topic prompt.
+- `CLAUDE.md` documents this as the standing process for any future contribution to the knowledge base.
+
 ## Security hardening
 
 - Every page sends a hardened Content Security Policy that blocks third-party scripts, confines images and
