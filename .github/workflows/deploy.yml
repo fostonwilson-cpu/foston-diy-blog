@@ -28,10 +28,10 @@ jobs:
       - name: Prepare site bundle
         run: |
           mkdir -p dist
-          cp index.html about.html tips.html style.css theme-toggle.js dist/
+          cp index.html about.html tips.html style.css theme-toggle.js tips-filter.js dist/
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
@@ -44,4 +44,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
